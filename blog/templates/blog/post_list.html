@@ -1,21 +1,11 @@
-<html>
-    <head>
-        <title>Kamal's blog</title>
-    </head>
-    <body>
-        <div>
-            <h1><a href="/">Kamal's Blog</a></h1>
-        </div>
-        <div>
-            <p>published: 24.07.2019, 12:14</p>
-            <h2><a href="">My First Blog</a></h2>
-            <p>I am trying really hard and working through all articles and books in order to learn this creating blog page. I hope to improve myself alot in the upcoming sessions. </p>
-        </div>
+<div>
+    <h1><a href="/">Kamal's Blog</a></h1>
+</div>
 
-        <div>
-            <p>published: 24.07.2019, 12:20</p>
-            <h2><a href="">My Second Blog</a></h2>
-            <p>One of the most exciting things I have ever done during my student life. Learning has no age and no limits. You can learn anything if you are determined to do so. Try choosing the right path not the easiest path.</p>
-        </div>
-    </body>
-</html>
+{% for post in posts%}
+    <div>
+        <p>published: {{ post.published_date }}</p>
+        <h1><a href="">{{ post.title }}</a></h1>
+        <p>{{ post.text|linebreaksbr }}</p>
+    </div>
+{% endfor %}
