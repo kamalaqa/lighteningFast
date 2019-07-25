@@ -1,21 +1,11 @@
-<html>
-    <head>
-        <title>Kamal's Blog</title>
-    </head>
-    <body>
-        <div>
-            <h1><a href="/">Kamal's Blog</a></h1>
-        </div>
-        <div>
-            <p>published: 23.07.2019, 12:14</p>
-            <h2><a href="">My First Blog</a></h2>
-            <p>I am so excited to have my first ever blog page. Coding was not so difficult as the mentor guides you through all the procedures. </p>
-        </div>
+<div>
+    <h1><a href="/">Kamal's Blog</a></h1>
+</div>
 
-        <div>
-            <p>published: 23.07.2019, 12:20</p>
-            <h2><a href="">My Second Post</a></h2>
-            <p>I had the experience of having this tutorial and I really appreciate the people.</p>
-        </div>
-    </body>
-</html>
+{% for post in posts %}
+    <div>
+        <p>published: {{ post.published_date }}</p>
+        <h1><a href="">{{ post.title }}</a></h1>
+        <p>{{ post.text|linebreaksbr }}</p>
+    </div>
+{% endfor %}
